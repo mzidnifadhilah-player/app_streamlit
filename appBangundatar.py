@@ -5,7 +5,7 @@ import math
 st.title('aplikasi perhitungan luas bangun datar')
 st.header('ini buatan anak SI')
 
-menu= st.sidebar.selectbox('pilih aplikasi',['luas persegi','luas segitiga','luas lingkaran', 'luas persegi panjang'])
+menu= st.sidebar.selectbox('pilih aplikasi',['luas persegi','luas segitiga','luas lingkaran', 'luas persegipanjang'])
 
 if menu=='luas persegi':
     st.write('ini halaman untuk menghitung luas persegi :balloon::smile:')
@@ -28,8 +28,8 @@ elif menu=='luas segitiga':
         luas= 1/2*alas*tinggi
         st.success(f'luas segitiga adalah {luas}')
         
-elif menu =='luas Lingkaran':
-    st.write(':red[ini halaman untuk menghitung luas segitiga]:smile:')
+elif menu =='luas lingkaran':
+    st.write(':red[ini halaman untuk menghitung luas lingkaran]:smile:')
     st.markdown('luas lingkaran')
     st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6HyUDjw1UrN-AHA3geVL_Ee_2olFVU7C8rQ&s')
     jari2 = st.number_input('silahkan masukkan jari-jari',min_value=0)
@@ -37,4 +37,15 @@ elif menu =='luas Lingkaran':
     if st.button('hitung luas'):
         luas= math.pi *(jari2**2)
         st.success(f'luas lingkaran adalah {luas}')
+        
+elif menu == 'luas persegipanjang':
+    st.write(':red[ini halaman untuk menghitung luas persegi panjang]:smile:')
+    st.markdown('luas persegipanjang')
+    st.image('https://images.bisnis.com/posts/2023/02/25/1631651/2._ini_rumus_luas_persegi_panjang_dan_contoh_soalnya_(dok._nuraini).jpg')
+    panjang= st.number_input('silahkan masukkan panjang',min_value=0)
+    lebar= st.number_input('silahkan masukkan lebar',min_value=0)
+    
+    if st.button('hitung luas'):
+        luas= panjang*lebar
+        st.success(f'luas persegi panjang adalah {luas}')
     
